@@ -15,7 +15,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem serviços </h5>
+                    <h5 class="card-title">Listagem Funcionarios </h5>
                     <p class="card-text">Descrição aqui</p>
                     <a href="{{ url('/servico1') }}" class="btn btn-primary">Clique aqui</a>
                 </div>
@@ -24,7 +24,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem de reuniões</h5>
+                    <h5 class="card-title">Listagem de Produtos</h5>
                     <p class="card-text">Descrição aqui</p>
                     <a href="{{ url('/reuniao') }}" class="btn btn-primary">Clique aqui</a>
                 </div>
@@ -33,7 +33,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem de usuários </h5>
+                    <h5 class="card-title">Listagem de Usuários </h5>
                     <p class="card-text">Descrição aqui</p>
                     <a href="{{ url('/usuario') }}" class="btn btn-primary">Clique aqui</a>
                 </div>

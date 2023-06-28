@@ -91,10 +91,10 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
-          <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+          <h2 data-aos="fade-up">Qualidade e <br>Exclusividade</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Descubra a verdadeira exclusividade na Jordan Store, onde cada par de tênis é uma obra de arte. Nossa loja é o paraíso para os verdadeiros fãs de basquete e sneakerheads, oferecendo os modelos mais cobiçados e raros da icônica marca Jordan. Com um estoque limitado e lançamentos exclusivos, garantimos que você terá uma experiência única ao adquirir seus tênis favoritos. Na Jordan Store, a exclusividade está nos pés de quem ousa se destacar.  </p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
+        
             
           </div>
         </div>
@@ -112,31 +112,29 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>About Us</h2>
-          <p>Learn More <span>About Us</span></p>
+          <h2>Sobre nós</h2>
+          <p>Saiba Mais<span></span></p>
         </div>
 
         <div class="row gy-4">
           <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/dunk.jpg) ;" data-aos="fade-up" data-aos-delay="150">
             <div class="call-us position-absolute">
-              <h4>Book a Table</h4>
-              <p>+1 5589 55488 55</p>
+              <h4>Converse conosco</h4>
+              <p>49 99899-9877</p>
             </div>
           </div>
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+              Na Jordan Store, qualidade é nossa prioridade. Cada par de tênis é meticulosamente fabricado com materiais premium e atenção aos detalhes, garantindo a durabilidade e o conforto que você merece. Nossos produtos são testados e aprovados pelos melhores atletas, garantindo um desempenho excepcional tanto nas quadras como nas ruas. 
               </p>
               <ul>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="bi bi-check2-all"></i> Exclusividade</li>
+                <li><i class="bi bi-check2-all"></i> Qualidade</li>
+                <li><i class="bi bi-check2-all"></i> Confiança</li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                Na Jordan Store, nossa marca é dedicada a trabalhar para você, cliente. Estamos comprometidos em oferecer a melhor experiência de compra possível, desde o momento em que você entra em nossa loja até o momento em que sai com seus tênis desejados. 
               </p>
 
               <div class="position-relative mt-4">
@@ -158,13 +156,12 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
-              <h3>Why Choose JORDAN STORE?</h3>
+              <h3>Porque escolher a Jordan Store?</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+              Comemorando 5 anos no mercado, a Jordan Store consolidou-se como uma referência no mundo dos tênis. Durante essa trajetória, construímos uma base sólida de clientes fiéis e entusiastas da marca Jordan.
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -175,24 +172,25 @@
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
-                  <h4>Corporis voluptates officia eiusmod</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4>
+Qualidade é nosso lema</h4>
+                  <p> Buscamos sempre oferecer produtos de alto padrão, desde a seleção dos materiais até a fabricação dos tênis. </p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-gem"></i>
-                  <h4>Ullamco laboris ladore pan</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <h4>Exclusividade</h4>
+                  <p>Trabalhamos arduamente para disponibilizar modelos únicos e lançamentos limitados, para que nossos clientes possam se destacar e expressar seu estilo individual</p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-inboxes"></i>
-                  <h4>Labore consequatur incidid dolore</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <h4>Atendimento ao cliente</h4>
+                  <p>Nosso compromisso com o atendimento ao cliente é inabalável. Valorizamos cada interação, buscando oferecer um serviço personalizado, amigável e eficiente.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -238,8 +236,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Our Menu</h2>
-          <p>Check Our <span>Yummy Menu</span></p>
+          <h2>Nosso Menu</h2>
+          <p>Confira nosso <span>Menu</span></p>
         </div>
 
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -606,8 +604,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Testimonials</h2>
-          <p>What Are They <span>Saying About Us</span></p>
+          <h2>Veja o depoimento dos clientes</h2>
+          <p>Veja o depoimento  <span>de quem acredita em nosso trabalho</span></p>
         </div>
 
         <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
@@ -620,11 +618,12 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                        
+"Comprar na Jordan Store foi a melhor decisão da minha vida! Encontrei o par de tênis dos meus sonhos, exclusivo e de altíssima qualidade. Não poderia estar mais satisfeito com a minha compra!"
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
+                      <h4>Advogado</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -644,7 +643,7 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                        "A melhor compra da minha vida foi na Jordan Store! Encontrei o modelo de tênis que eu tanto desejava, além de um atendimento incrível e uma experiência de compra única. Estou completamente apaixonado pelos meus novos tênis!"
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Sara Wilsson</h3>
@@ -668,11 +667,11 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                        "Não consigo expressar o quão feliz estou com a minha melhor compra na Jordan Store. Encontrei um par de tênis exclusivo que combinou perfeitamente com o meu estilo e personalidade. A qualidade do produto superou todas as minhas expectativas. Sem dúvidas, foi um investimento que valeu cada centavo!"
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
+                      <h4>Farmaceutico</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -692,11 +691,11 @@
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                        "A Jordan Store superou todas as minhas expectativas! A minha melhor compra foi lá, onde encontrei não apenas um tênis incrível, mas uma experiência completa. A equipe foi atenciosa, o ambiente da loja era impecável e o produto final era simplesmente perfeito. Recomendo a todos que buscam excelência em cada detalhe."
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
                       <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
+                      <h4>Advogado</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -742,8 +741,8 @@
               </div>
               <div class="member-info">
                 <h4>NIKE</h4>
-                <span>Master Chef</span>
-                <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+ 
+                <p>A Nike é sinônimo de excelência esportiva e inovação. Com seu compromisso em inspirar e capacitar atletas ao redor do mundo, a marca oferece produtos de alto desempenho, combinados com designs modernos e tecnologia de ponta, elevando o potencial de cada pessoa que usa seus produtos.  </p>
               </div>
             </div>
           </div><!-- End Chefs Member -->
@@ -761,8 +760,8 @@
               </div>
               <div class="member-info">
                 <h4>ADIDAS</h4>
-                <span>Patissier</span>
-                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+            
+                <p> Com um legado de inovação e estilo, a Adidas é uma marca icônica que combina performance e moda. Seus produtos de alta qualidade atendem às necessidades dos atletas e amantes de moda, garantindo conforto e estilo em cada passo.</p>
               </div>
             </div>
           </div><!-- End Chefs Member -->
@@ -780,8 +779,8 @@
               </div>
               <div class="member-info">
                 <h4>PUMA</h4>
-                <span>Cook</span>
-                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+           
+                <p>Com uma abordagem audaciosa e vanguardista, a Puma é uma marca que une estilo e esportividade. Reconhecida por suas colaborações inovadoras e designs arrojados, a Puma oferece produtos que se destacam pela sua autenticidade e capacidade de expressão, inspirando indivíduos a serem ousados e confiantes.</p>
               </div>
             </div>
           </div><!-- End Chefs Member -->
@@ -791,60 +790,7 @@
       </div>
     </section><!-- End Chefs Section -->
 
-    <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Book A Table</h2>
-          <p>Book <span>Your Stay</span> With Us</p>
-        </div>
-
-        <div class="row g-0">
-
-          <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
-
-          <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-            <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-              <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                  <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Book a Table</button></div>
-            </form>
-          </div><!-- End Reservation Form -->
-
+   
         </div>
 
       </div>
@@ -972,4 +918,4 @@
 
 </body>
 
-</html>
+</html> 

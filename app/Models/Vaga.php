@@ -18,7 +18,7 @@ class Vaga extends Model
         return  [
             'nome' => 'required | max: 120',
             'telefone' => 'required | max: 20',
-            'email' => ' nullable | email | max: 100',
+            'email' => ' required | email | max: 100',
             'idade' => ' required | max: 100',
             'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
         ];

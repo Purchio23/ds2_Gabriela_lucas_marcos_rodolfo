@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">LG AGENCIA</a>
+            <a class="navbar-brand" href="{{ url('/') }}">JORDAN STORE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -14,8 +14,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/vaga/create') }}">Currículo</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/servico1/create') }}">Serviços</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/reuniao/create') }}">Reunião</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/servico1/create') }}">Funcionarios</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/reuniao/create') }}">Produtos</a></li>
                             <li><a class="dropdown-item" href="{{ url('/usuario/create') }}">Usuario</a></li>
                         </ul>
                     </li>

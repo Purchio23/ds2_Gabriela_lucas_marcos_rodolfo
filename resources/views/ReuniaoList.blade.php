@@ -1,15 +1,15 @@
 @extends('base.app')
 
 @section('conteudo')
-@section('tituloPagina', 'Listagem de Reuniões')
-<h1>Listagem de Reuniões</h1>
+@section('tituloPagina', 'Listagem de Produto')
+<h1>Listagem de Produtos</h1>
 <form action="{{ route('reuniao.search') }}" method="post">
     @csrf
     <div class="row">
         <div class="col-2">
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
-                <option value="email">Email</option>
+                <option value="email">Valor</option>
             </select>
         </div>
         <div class="col-4">
@@ -29,9 +29,9 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Email</th>
-            <th scope="col">Data</th>
-            <th scope="col">Horário</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Fornecedor</th>
+         
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -43,7 +43,7 @@
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->data }}</td>
-                <td>{{ $item->horario }}</td>
+             
                 <td><a href="{{ action('App\Http\Controllers\ReuniaoController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>

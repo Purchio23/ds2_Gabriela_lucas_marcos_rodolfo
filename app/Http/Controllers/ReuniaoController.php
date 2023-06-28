@@ -23,16 +23,16 @@ class ReuniaoController extends Controller
     {
         $request->validate([
             'nome' => 'required|max:120',
-            'email' => 'nullable|email|max:100',
-            'data' => 'required|date',
-            'horario' => 'required',
+            'email' => 'required|max:100',
+            'data' => 'required| max:100',
+     
         ]);
 
         $dados = [
             'nome' => $request->nome,
             'email' => $request->email,
             'data' => $request->data,
-            'horario' => $request->horario,
+    
         ];
 
         Reuniao::create($dados);
@@ -58,16 +58,16 @@ class ReuniaoController extends Controller
     {
         $request->validate([
             'nome' => 'required|max:120',
-            'email' => 'nullable|email|max:100',
-            'data' => 'required|date',
-            'horario' => 'required',
+            'email' => 'required||max:100',
+            'data' => 'required| max:120',
+
         ]);
 
         $dados = [
             'nome' => $request->nome,
             'email' => $request->email,
             'data' => $request->data,
-            'horario' => $request->horario,
+      
         ];
 
         Reuniao::updateOrCreate(['id' => $request->id], $dados);

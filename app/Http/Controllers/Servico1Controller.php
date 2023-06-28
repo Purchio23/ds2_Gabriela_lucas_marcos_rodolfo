@@ -28,8 +28,8 @@ class Servico1Controller extends Controller
         $request->validate([
             'nome' => 'required|max:120',
             'telefone' => 'required|max:20',
-            'email' => 'nullable|email|max:100',
-            'categoria_id' => 'nullable',
+            'email' => 'required|max:100',
+            'categoria_id' => 'required',
             'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
@@ -84,8 +84,8 @@ class Servico1Controller extends Controller
         $request->validate([
             'nome' => 'required|max:120',
             'telefone' => 'required|max:20',
-            'email' => 'nullable|email|max:100',
-            'categoria_id' => 'nullable',
+            'email' => 'required|max:100',
+            'categoria_id' => 'required',
             'imagem' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 

@@ -22,8 +22,9 @@ class Servico1 extends Model
         return  [
             'nome' => 'required | max: 120',
             'telefone' => 'required | max: 20',
-            'email' => ' nullable | email | max: 100',
+            'email' => ' required | max: 100',
             'categoria_id' => ' nullable',
+            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
         ];
     }
 
@@ -34,6 +35,8 @@ class Servico1 extends Model
             'telefone.required' => 'O telefone é obrigatório',
             'telefone.max' => 'Só é permitido 20 caracteres',
             'email.max' => 'Só é permitido 100 caracteres',
+            'categoria_id.required' => 'O salário é obrigatório',
+            'imagem.required' => 'A imagem é obrigatória',
         ];
     }
 

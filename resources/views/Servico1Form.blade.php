@@ -8,19 +8,19 @@
             $route = route('servico1.store');
         }
     @endphp
-@section('tituloPagina', 'Formulário Usuário')
+@section('tituloPagina', 'Formulário Funcionários')
 
 
 <div class="col">
     <div class="row">
-        <h1>Formulário de serviços</h1>
+        <h1>Formulário de Funcionários</h1>
         <form action='{{ $route }}' method="POST" enctype="multipart/form-data">
             @csrf
             @if (!empty($servico1->id))
                 @method('PUT')
             @endif
 
-            <h4>Atravês desse formulário você pode definir o serviço que você deseja que posteriormente entraremos em contato para apresentarmos nossa proposta e valores.</h4>
+            <h4>Cadastre Funcionários</h4>
 
             <input type="hidden" name="id"
                 value="@if (!empty(old('id'))) {{ old('id') }} @elseif(!empty($servico1->id)) {{ $servico1->id }} @else {{ '' }} @endif" /><br>
@@ -39,12 +39,9 @@
                 <input type="email" class="form-control" name="email"
                     value="@if (!empty(old('email'))) {{ old('email') }} @elseif(!empty($servico1->email)) {{ $servico1->email }} @else {{ '' }} @endif" /><br>
             </div>
-            <div class="col-3">
-                <label class="form-label">Tipo de serviço</label><br>
-                <select name="categoria_id" class="form-select">
-                    @foreach ($categorias as $item)
-                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
-                    @endforeach
+            <label class="form-label">Salário</label><br>
+                <input type="text" class="form-control" name="categoria_id"
+                    value="@if (!empty(old('categoria_id'))) {{ old('categoria_id') }} @elseif(!empty($servico1->categoria_id)) {{ $servico1->categoria_id }} @else {{ '' }} @endif" /><br>
                 </select>
             </div>
             <div class="col-3">

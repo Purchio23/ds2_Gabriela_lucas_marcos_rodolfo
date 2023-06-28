@@ -19,8 +19,8 @@ class Reuniao extends Model
     {
         return  [
             'nome' => 'required|max:120',
-            'email' => 'nullable|email|max:100',
-            'data' => 'required|date',
+            'email' => 'required|max:100',
+            'data' => 'required|',
             'horario' => 'required',
         ];
     }

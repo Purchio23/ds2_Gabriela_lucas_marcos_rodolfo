@@ -185,17 +185,17 @@ CREATE TABLE IF NOT EXISTS `reuniao` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data` date DEFAULT NULL,
-  `horario` time DEFAULT NULL,
+  `data` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_pweb2_2023_1.reuniao: ~0 rows (aproximadamente)
-INSERT INTO `reuniao` (`id`, `nome`, `email`, `data`, `horario`, `created_at`, `updated_at`) VALUES
-	(1, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-06-30', '22:32:00', '2023-06-26 00:30:39', '2023-06-26 00:30:39'),
-	(2, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-05-31', '22:36:00', '2023-06-26 00:32:33', '2023-06-26 00:32:33');
+INSERT INTO `reuniao` (`id`, `nome`, `email`, `data`,  `created_at`, `updated_at`) VALUES
+	(1, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-06-30', '2023-06-26 00:30:39', '2023-06-26 00:30:39'),
+	(2, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-05-31', '2023-06-26 00:32:33', '2023-06-26 00:32:33');
 
 -- Copiando estrutura para tabela db_pweb2_2023_1.sensor
 CREATE TABLE IF NOT EXISTS `sensor` (

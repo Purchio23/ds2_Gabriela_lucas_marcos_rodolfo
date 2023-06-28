@@ -244,9 +244,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Copiando dados para a tabela db_pweb2_2023_1.users: ~3 rows (aproximadamente)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'admin', 'admin@admin.com', NULL, '$2y$10$svsGlwhL5OHaqhH0eK.rI.glzmPBBvpq/./hjNxgyMsg3UiUNj5lq', NULL, '2023-06-04 17:23:30', '2023-06-04 17:23:30'),
-	(2, 'admin', 'admin1@admin.com', NULL, '$2y$10$2rXXVIdKAyyRQ/hnV9jpR.VidpbKr58BdrXdsjlUk1WOMK0YLiAc6', NULL, '2023-06-04 18:01:52', '2023-06-04 18:01:52'),
-	(3, 'admin', 'admin@admin', NULL, '$2y$10$CDPOWO.0RCdd65mdeLvaX.XjBG0l4YW3.FwrSs80cs8xsdjs3QHwq', NULL, '2023-06-25 23:46:56', '2023-06-25 23:46:56');
+	(1, 'admin', 'admin@admin.com', NULL, 'admin@123', NULL, '2023-06-04 17:23:30', '2023-06-04 17:23:30'),
+
 
 -- Copiando estrutura para tabela db_pweb2_2023_1.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -264,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_pweb2_2023_1.usuario: ~4 rows (aproximadamente)
-INSERT INTO `usuario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
+IN SERT INTO `usuario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
 	(1, 'Rodolfo', '49 998174346', 'rodolfobudde1@gmail.com', 'imagem/20230604142515.PNG', '2023-06-04 17:25:16', '2023-06-06 01:09:11', NULL),
 	(2, 'Marcos', '49 998234576', 'marcosambrozio@gmail.com', NULL, '2023-06-04 17:25:42', '2023-06-06 01:09:27', NULL),
 	(3, 'Jackson', '49 99812371234', 'lordjack@gmail.com', NULL, '2023-06-04 17:51:10', '2023-06-06 01:09:41', NULL);

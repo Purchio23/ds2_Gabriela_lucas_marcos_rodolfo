@@ -56,13 +56,6 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        // Verificar se o usuário é um administrador
-        if ($user->email === 'admin@admin.com' && Hash::check($request->input('password'), 'admin@123')) {
-            // Redirecionar para o painel do administrador
-            return Redirect::to('dashboard');
-        }
-        else
-        // Redirecionar para a página de boas-vindas
-        return Redirect::to ('welcome');
+    
     }
 }

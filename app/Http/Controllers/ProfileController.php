@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -55,6 +56,13 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to ('welcome.blade.php');
+        // Verificar se o usuário é um administrador
+        if ($user->email === 'admin@admin.com' && Hash::check($request->input('password'), 'admin@123')) {
+            // Redirecionar para o painel do administrador
+            return Redirect::to('dashboard');
+        }
+        else
+        // Redirecionar para a página de boas-vindas
+        return Redirect::to ('welcome');
     }
 }

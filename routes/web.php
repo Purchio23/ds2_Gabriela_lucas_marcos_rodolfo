@@ -34,28 +34,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('reuniao', ReuniaoController::class);
     Route::resource('vaga', VagaController::class);
 
-    Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
-        'usuario.search'
-    );
-    Route::post('servico1/search', [Servico1Controller::class, 'search'])->name(
-        'servico1.search'
-    );
-    Route::post('reuniao/search', [ReuniaoController::class, 'search'])->name(
-        'reuniao.search'
-    );
-    Route::post('vaga/search', [VagaController::class, 'search'])->name(
-        'vaga.search'
-    );
+    Route::post('usuario/search', [UsuarioController::class, 'search'])->name('usuario.search');
+    Route::post('servico1/search', [Servico1Controller::class, 'search'])->name('servico1.search');
+    Route::post('reuniao/search', [ReuniaoController::class, 'search'])->name('reuniao.search');
+    Route::post('vaga/search', [VagaController::class, 'search'])->name('vaga.search');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name(
-        'profile.edit'
-    );
-    Route::patch('/profile', [ProfileController::class, 'update'])->name(
-        'profile.update'
-    );
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name(
-        'profile.destroy'
-    );
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy')->middleware('admin');
 });
 
 require __DIR__ . '/auth.php';

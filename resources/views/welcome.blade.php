@@ -52,7 +52,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Sobre nós</a></li>
+          <li><a href="#about">Sobre nóssss</a></li>
           <li><a href="#menu">Itens</a></li>
           <li><a href="#chefs">Marcas</a></li>
         <body class="antialiased">

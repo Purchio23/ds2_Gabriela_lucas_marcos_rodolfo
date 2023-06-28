@@ -266,7 +266,7 @@ Qualidade é nosso lema</h4>
           <div class="tab-pane fade active show" id="menu-starters">
 
             <div class="tab-header text-center">
-              <p>Menu</p>
+              <p>Menuuuuu</p>
               <h3>NIKE</h3>
             </div>
 

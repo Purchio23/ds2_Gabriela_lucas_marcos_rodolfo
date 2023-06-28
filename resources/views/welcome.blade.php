@@ -62,12 +62,12 @@
       @if (Route::has('login'))
                   <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                       @auth
-                      
+
                       <a href="{{ url('/dashboard') }}"  class="btn-book-a-table">Dashboard</a>
-  
+
                       @else
                           <a href="{{ route('login') }}" class="btn-book-a-table"">Log in</a>
-  
+
                           @if (Route::has('register'))
                               <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                           @endif
@@ -94,8 +94,8 @@
           <h2 data-aos="fade-up">Qualidade e <br>Exclusividade</h2>
           <p data-aos="fade-up" data-aos-delay="100">Descubra a verdadeira exclusividade na Jordan Store, onde cada par de tênis é uma obra de arte. Nossa loja é o paraíso para os verdadeiros fãs de basquete e sneakerheads, oferecendo os modelos mais cobiçados e raros da icônica marca Jordan. Com um estoque limitado e lançamentos exclusivos, garantimos que você terá uma experiência única ao adquirir seus tênis favoritos. Na Jordan Store, a exclusividade está nos pés de quem ousa se destacar.  </p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-        
-            
+
+
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
@@ -126,7 +126,7 @@
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
-              Na Jordan Store, qualidade é nossa prioridade. Cada par de tênis é meticulosamente fabricado com materiais premium e atenção aos detalhes, garantindo a durabilidade e o conforto que você merece. Nossos produtos são testados e aprovados pelos melhores atletas, garantindo um desempenho excepcional tanto nas quadras como nas ruas. 
+              Na Jordan Store, qualidade é nossa prioridade. Cada par de tênis é meticulosamente fabricado com materiais premium e atenção aos detalhes, garantindo a durabilidade e o conforto que você merece. Nossos produtos são testados e aprovados pelos melhores atletas, garantindo um desempenho excepcional tanto nas quadras como nas ruas.
               </p>
               <ul>
                 <li><i class="bi bi-check2-all"></i> Exclusividade</li>
@@ -134,7 +134,7 @@
                 <li><i class="bi bi-check2-all"></i> Confiança</li>
               </ul>
               <p>
-                Na Jordan Store, nossa marca é dedicada a trabalhar para você, cliente. Estamos comprometidos em oferecer a melhor experiência de compra possível, desde o momento em que você entra em nossa loja até o momento em que sai com seus tênis desejados. 
+                Na Jordan Store, nossa marca é dedicada a trabalhar para você, cliente. Estamos comprometidos em oferecer a melhor experiência de compra possível, desde o momento em que você entra em nossa loja até o momento em que sai com seus tênis desejados.
               </p>
 
               <div class="position-relative mt-4">
@@ -161,7 +161,7 @@
               Comemorando 5 anos no mercado, a Jordan Store consolidou-se como uma referência no mundo dos tênis. Durante essa trajetória, construímos uma base sólida de clientes fiéis e entusiastas da marca Jordan.
               </p>
               <div class="text-center">
-                
+
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -255,7 +255,7 @@ Qualidade é nosso lema</h4>
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-              <h4>PUMA</h4>
+              <h4>PUMAAAA</h4>
             </a>
           </li><!-- End tab nav item -->
 
@@ -334,7 +334,7 @@ Qualidade é nosso lema</h4>
 
               <div class="col-lg-4 menu-item">
                 <a href="assets/img/menu/kyrie.webp" class="glightbox"><img src="assets/img/menu/kyrie.webp" class="menu-img img-fluid" alt=""></a>
-                <h4>                  
+                <h4>
                   Laboriosam Direva</h4>
                 <p class="ingredients">
                   Lorem, deren, trataro, filede, nerada
@@ -618,7 +618,7 @@ Qualidade é nosso lema</h4>
                     <div class="testimonial-content">
                       <p>
                         <i class="bi bi-quote quote-icon-left"></i>
-                        
+
 "Comprar na Jordan Store foi a melhor decisão da minha vida! Encontrei o par de tênis dos meus sonhos, exclusivo e de altíssima qualidade. Não poderia estar mais satisfeito com a minha compra!"
                         <i class="bi bi-quote quote-icon-right"></i>
                       </p>
@@ -722,7 +722,7 @@ Qualidade é nosso lema</h4>
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          
+
           <p>MARCAS <span>EXCLUSIVAS</span> QUE TRABALHAMOS</p>
         </div>
 
@@ -741,7 +741,7 @@ Qualidade é nosso lema</h4>
               </div>
               <div class="member-info">
                 <h4>NIKE</h4>
- 
+
                 <p>A Nike é sinônimo de excelência esportiva e inovação. Com seu compromisso em inspirar e capacitar atletas ao redor do mundo, a marca oferece produtos de alto desempenho, combinados com designs modernos e tecnologia de ponta, elevando o potencial de cada pessoa que usa seus produtos.  </p>
               </div>
             </div>
@@ -760,7 +760,7 @@ Qualidade é nosso lema</h4>
               </div>
               <div class="member-info">
                 <h4>ADIDAS</h4>
-            
+
                 <p> Com um legado de inovação e estilo, a Adidas é uma marca icônica que combina performance e moda. Seus produtos de alta qualidade atendem às necessidades dos atletas e amantes de moda, garantindo conforto e estilo em cada passo.</p>
               </div>
             </div>
@@ -779,7 +779,7 @@ Qualidade é nosso lema</h4>
               </div>
               <div class="member-info">
                 <h4>PUMA</h4>
-           
+
                 <p>Com uma abordagem audaciosa e vanguardista, a Puma é uma marca que une estilo e esportividade. Reconhecida por suas colaborações inovadoras e designs arrojados, a Puma oferece produtos que se destacam pela sua autenticidade e capacidade de expressão, inspirando indivíduos a serem ousados e confiantes.</p>
               </div>
             </div>
@@ -790,7 +790,7 @@ Qualidade é nosso lema</h4>
       </div>
     </section><!-- End Chefs Section -->
 
-   
+
         </div>
 
       </div>
@@ -884,7 +884,7 @@ Qualidade é nosso lema</h4>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  
+
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>JORDAN STORE</span></strong>. All Rights Reserved
@@ -918,4 +918,4 @@ Qualidade é nosso lema</h4>
 
 </body>
 
-</html> 
+</html>

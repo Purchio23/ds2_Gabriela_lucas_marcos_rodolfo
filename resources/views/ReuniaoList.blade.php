@@ -9,7 +9,7 @@
         <div class="col-2">
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
-                <option value="telefone">Telefone</option>
+                <option value="telefone">Tamanho</option>
             </select>
         </div>
         <div class="col-4">
@@ -29,7 +29,7 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
+            <th scope="col">Tamanho</th>
             <th scope="col">Email</th>
             <th scope="col">Categoria</th>
             <th scope="col"></th>

@@ -37,14 +37,6 @@
                 <input type="email" class="form-control" name="email"
                     value="@if (!empty(old('email'))) {{ old('email') }} @elseif(!empty($usuario->email)) {{ $usuario->email }} @else {{ '' }} @endif" /><br>
             </div>
-            <div class="col-3">
-                <label class="form-label">Categoria</label><br>
-                <select name="categoria_id" class="form-select">
-                    @foreach ($categorias as $item)
-                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
             @php
                 $nome_imagem = !empty($usuario->imagem) ? $usuario->imagem : 'sem_imagem.jpg';
             @endphp

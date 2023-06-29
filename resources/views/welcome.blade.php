@@ -52,7 +52,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Sobre nóssss</a></li>
+          <li><a href="#about">Sobre nós</a></li>
           <li><a href="#menu">Itens</a></li>
           <li><a href="#chefs">Marcas</a></li>
         <body class="antialiased">
@@ -237,7 +237,7 @@ Qualidade é nosso lema</h4>
 
         <div class="section-header">
           <h2>Nosso Menu</h2>
-          <p>Confira nosso <span>Menu</span></p>
+          <p>Confira nossos <span>Produtos</span></p>
         </div>
 
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -255,7 +255,7 @@ Qualidade é nosso lema</h4>
 
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-              <h4>PUMAAAA</h4>
+              <h4>PUMA</h4>
             </a>
           </li><!-- End tab nav item -->
 

@@ -34,7 +34,7 @@
                     value="@if (!empty(old('telefone'))) {{ old('telefone') }} @elseif(!empty($reuniao->telefone)) {{ $reuniao->telefone }} @else {{ '' }} @endif" /><br>
             </div>
             <div class="col-3">
-                <label class="form-label">Fornecedor</label><br>
+                <label class="form-label">Email do Fornecedor</label><br>
                 <input type="email" class="form-control" name="email"
                     value="@if (!empty(old('email'))) {{ old('email') }} @elseif(!empty($reuniao->email)) {{ $reuniao->email }} @else {{ '' }} @endif" /><br>
             </div>

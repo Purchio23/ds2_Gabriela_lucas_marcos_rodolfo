@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('vaga', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',120);
+            $table->string('telefone',20);
+            $table->string('email',100);
+            $table->string('idade',100);
+            $table->string('imagem',150)->nullable();
             $table->timestamps();
         });
     }

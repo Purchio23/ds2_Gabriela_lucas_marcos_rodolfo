@@ -29,6 +29,12 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_pweb2_2023_1.categoria: ~0 rows (aproximadamente)
+INSERT INTO `categoria` (`id`, `nome`, `created_at`, `updated_at`) VALUES
+	(1, 'Gerente', NULL, NULL),
+	(2, 'Entregador', NULL, NULL),
+	(3, 'Caixa', NULL, NULL),
+	(4, 'Auxiliar administrativo', NULL, NULL),
+	(5, 'Lider de produção', NULL, NULL);
 
 -- Copiando estrutura para tabela db_pweb2_2023_1.curriculo
 CREATE TABLE IF NOT EXISTS `curriculo` (
@@ -183,19 +189,21 @@ INSERT INTO `produto` (`id`, `nome`, `valor`, `email`, `imagem`, `created_at`, `
 -- Copiando estrutura para tabela db_pweb2_2023_1.reuniao
 CREATE TABLE IF NOT EXISTS `reuniao` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-
+  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `categoria_id` bigint unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `reuniao_categoria_id_foreign` (`categoria_id`),
+  CONSTRAINT `reuniao_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 -- Copiando dados para a tabela db_pweb2_2023_1.reuniao: ~0 rows (aproximadamente)
-INSERT INTO `reuniao` (`id`, `nome`, `email`, `data`,  `created_at`, `updated_at`) VALUES
-	(1, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-06-30', '2023-06-26 00:30:39', '2023-06-26 00:30:39'),
-	(2, 'Rosas da Maria', 'rodolfobudde1@gmail.com', '2023-05-31', '2023-06-26 00:32:33', '2023-06-26 00:32:33');
+
 
 -- Copiando estrutura para tabela db_pweb2_2023_1.sensor
 CREATE TABLE IF NOT EXISTS `sensor` (
@@ -263,7 +271,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_pweb2_2023_1.usuario: ~4 rows (aproximadamente)
-IN SERT INTO `usuario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
+INSERT INTO `usuario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
 	(1, 'Rodolfo', '49 998174346', 'rodolfobudde1@gmail.com', 'imagem/20230604142515.PNG', '2023-06-04 17:25:16', '2023-06-06 01:09:11', NULL),
 	(2, 'Marcos', '49 998234576', 'marcosambrozio@gmail.com', NULL, '2023-06-04 17:25:42', '2023-06-06 01:09:27', NULL),
 	(3, 'Jackson', '49 99812371234', 'lordjack@gmail.com', NULL, '2023-06-04 17:51:10', '2023-06-06 01:09:41', NULL);
@@ -274,16 +282,15 @@ CREATE TABLE IF NOT EXISTS `vaga` (
   `nome` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `telefone` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `imagem` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `idade` int DEFAULT NULL,
+  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_pweb2_2023_1.vaga: ~0 rows (aproximadamente)
-INSERT INTO `vaga` (`id`, `nome`, `telefone`, `email`, `imagem`, `idade`, `updated_at`, `created_at`) VALUES
-	(1, 'Rodolfo', '49 998174346', 'rodolfo@rodolfo.com', 'imagem/20230625214151.png', 18, '2023-06-26 00:41:51', '2023-06-25 23:52:39');
+INSERT INTO `vaga` (`id`, `nome`, `telefone`, `email`,`idade`, `imagem`, `updated_at`, `created_at`) VALUES
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

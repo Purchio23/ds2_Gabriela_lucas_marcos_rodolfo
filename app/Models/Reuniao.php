@@ -8,32 +8,34 @@ use Illuminate\Database\Eloquent\Model;
 class Reuniao extends Model
 {
     use HasFactory;
-
     protected $table = "reuniao";
 
     protected $fillable = [
-        'nome', 'email', 'data', 'horario'
+        'nome', 'telefone', 'email','categoria_id', 'imagem'
     ];
 
-    public static function rules()
-    {
-        return  [
-            'nome' => 'required|max:120',
-            'email' => 'required|max:100',
-            'data' => 'required|',
-            'horario' => 'required',
-        ];
+    public function categoria(){
+        return $this->belongsTo(Categoria::class,'categoria_id','id');
     }
 
-    public static function messages()
-    {
+    public static function rules(){
+        return  [
+            'nome' => 'required | max: 120',
+            'telefone' => 'required | max: 20',
+            'email' => ' nullable | email | max: 100',
+            'categoria_id' => ' nullable',
+            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        ];
+    }    
+
+    public static function messages(){
         return [
             'nome.required' => 'O nome é obrigatório',
             'nome.max' => 'Só é permitido 120 caracteres',
+            'telefone.required' => 'O telefone é obrigatório',
+            'telefone.max' => 'Só é permitido 20 caracteres',
             'email.max' => 'Só é permitido 100 caracteres',
-            'data.required' => 'A data é obrigatória',
-            'data.date' => 'Formato de data inválido',
-            'horario.required' => 'O horário é obrigatório',
         ];
     }
+
 }

@@ -46,13 +46,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        // Verificar se o usuário é um administrador
-        if ($user->email === 'admin@admin.com' && Hash::check($request->input('password'), 'admin@123')) {
-            // Redirecionar para o painel do administrador
-            return redirect(RouteServiceProvider::HOME);
-        }  else{
-        // Redirecionar para a página de boas-vindas
-        return Redirect::to ('welcome');
-        }
+        return redirect(RouteServiceProvider::HOME);
     }
 }

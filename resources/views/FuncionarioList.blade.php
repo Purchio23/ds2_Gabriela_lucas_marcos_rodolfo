@@ -2,7 +2,7 @@
 
 @section('conteudo')
 @section('tituloPagina', 'Listagem de Serviços de Coprodução')
-<h1>Listagem De Serviços</h1>
+<h1>Listagem De Funcionários cadastrados</h1>
 <form action="{{ route('funcionario.search') }}" method="post">
 
     @csrf

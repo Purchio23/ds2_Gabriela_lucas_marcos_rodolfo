@@ -3,31 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vaga;
+use App\Models\Curriculum;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
 
-class VagaController extends Controller
+class CurriculumController extends Controller
 {
     public function index()
     {
-        $vagas = Vaga::all();
+        $curriculums = Curriculum::all();
 
-        return view('VagaList')->with(['vagas' => $vagas]);
+        return view('CurriculumList')->with(['curriculums' => $curriculums]);
     }
 
     public function create()
     {
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('VagaForm')->with(['categorias' => $categorias]);
+        return view('CurriculumForm')->with(['categorias' => $categorias]);
     }
 
     public function store(Request $request)
     {
         $request->validate(
-            Vaga::rules(),
-            Vaga::messages()
+            Curriculum::rules(),
+            Curriculum::messages()
         );
 
         //adiciono os dados do formulário ao vetor
@@ -52,29 +52,29 @@ class VagaController extends Controller
         }
 
         //passa o vetor com os dados do formulário como parametro para ser salvo
-        Vaga::create($dados);
+        Curriculum::create($dados);
 
-        return redirect('vaga')->with('success', 'Cadastrado com sucesso!');
+        return redirect('curriculum')->with('success', 'Cadastrado com sucesso!');
     }
 
     public function edit($id)
     {
-        $vaga = Vaga::findOrFail($id);
+        $curriculum = Curriculum::findOrFail($id);
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('VagaForm')->with([
-            'vaga' => $vaga,
+        return view('CurriculumForm')->with([
+            'curriculum' => $curriculum,
             'categorias' => $categorias,
         ]);
     }
 
     public function show($id)
     {
-        $vaga = Vaga::findOrFail($id);
+        $curriculum = Curriculum::findOrFail($id);
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('VagaForm')->with([
-            'vaga' => $vaga,
+        return view('CurriculumForm')->with([
+            'curriculum' => $curriculum,
             'categorias' => $categorias,
         ]);
     }
@@ -82,8 +82,8 @@ class VagaController extends Controller
     public function update(Request $request)
     {
         $request->validate(
-            Vaga::rules(),
-            Vaga::messages()
+            Curriculum::rules(),
+            Curriculum::messages()
         );
 
         //adiciono os dados do formulário ao vetor
@@ -107,27 +107,27 @@ class VagaController extends Controller
         }
 
         //metodo para atualizar passando o vetor com os dados do form e o id
-        Vaga::updateOrCreate(
+        Curriculum::updateOrCreate(
             ['id' => $request->id],
             $dados
         );
 
-        return redirect('vaga')->with('success', 'Atualizado com sucesso!');
+        return redirect('curriculum')->with('success', 'Atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
-        $vaga = Vaga::findOrFail($id);
+        $curriculum = Curriculum::findOrFail($id);
 
-        if (!empty($vaga->imagem)) {
-            if (Storage::disk('public')->exists($vaga->imagem)) {
-                Storage::disk('public')->delete($vaga->imagem);
+        if (!empty($curriculum->imagem)) {
+            if (Storage::disk('public')->exists($curriculum->imagem)) {
+                Storage::disk('public')->delete($curriculum->imagem);
             }
         }
 
-        $vaga->delete();
+        $curriculum->delete();
 
-        return redirect('vaga')->with('success', 'Removido com sucesso!');
+        return redirect('curriculum')->with('success', 'Removido com sucesso!');
     }
 
     public function search(Request $request)
@@ -135,7 +135,7 @@ class VagaController extends Controller
         $campo = $request->campo;
         $valor = $request->valor;
 
-        $vagas = Vaga::when($campo, function ($query) use ($campo, $valor) {
+        $curriculums = Curriculum::when($campo, function ($query) use ($campo, $valor) {
             if ($campo === 'nome') {
                 $query->where('nome', 'like', '%' . $valor . '%');
             } elseif ($campo === 'telefone') {
@@ -145,6 +145,6 @@ class VagaController extends Controller
             }
         })->get();
 
-        return view('VagaList')->with(['vagas' => $vagas]);
+        return view('CurriculumList')->with(['curriculums' => $curriculums]);
     }
 }

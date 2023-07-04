@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Listagem Currículos</h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="{{('vaga')}}" class="btn btn-danger">Editar Perfil</a>
+                    <a href="{{('curriculum')}}" class="btn btn-danger">Editar Perfil</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Listagem Funcionários</h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="{{ url('/servico1') }}" class="btn btn-danger">Clique aqui</a>
+                    <a href="{{ url('/funcionario') }}" class="btn btn-danger">Clique aqui</a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Listagem de Produtos</h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="{{ url('/reuniao') }}" class="btn btn-danger">Clique aqui</a>
+                    <a href="{{ url('/produto') }}" class="btn btn-danger">Clique aqui</a>
                 </div>
             </div>
         </div>

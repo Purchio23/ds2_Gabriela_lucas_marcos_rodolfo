@@ -5,23 +5,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vaga extends Model
+class Produto extends Model
 {
     use HasFactory;
-    protected $table = "Vaga";
+    protected $table = "produto";
 
     protected $fillable = [
-        'nome', 'telefone', 'email', 'idade', 'imagem'
+        'nome', 'telefone', 'email', 'categoria_id', 'imagem', 'data', 'hora'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
+    }
 
     public static function rules()
     {
         return  [
             'nome' => 'required|max:120',
             'telefone' => 'required|max:20',
-            'email' => 'required|email|max:100',
-            'idade' => 'required|max:100',
+            'email' => 'nullable|email|max:100',
+            'categoria_id' => 'nullable',
             'imagem' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'data' => 'nullable|date',
+            'hora' => 'nullable',
         ];
     }
 
@@ -32,14 +39,8 @@ class Vaga extends Model
             'nome.max' => 'Só é permitido 120 caracteres',
             'telefone.required' => 'O telefone é obrigatório',
             'telefone.max' => 'Só é permitido 20 caracteres',
-            'idade.required' => 'A idade é obrigatória',
-            'idade.max' => 'Só é permitido 100 caracteres',
-            'email.required' => 'O email é obrigatório',
-            'email.email' => 'O email deve ser válido',
             'email.max' => 'Só é permitido 100 caracteres',
-            'imagem.image' => 'A imagem deve ser um arquivo de imagem válido',
-            'imagem.mimes' => 'A imagem deve estar no formato JPEG, JPG ou PNG',
-            'imagem.max' => 'O tamanho máximo da imagem é 2048KB',
+            'data.date' => 'Formato de data inválido',
         ];
     }
 }

@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\Servico1Controller;
-use App\Http\Controllers\ReuniaoController;
-use App\Http\Controllers\VagaController;
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CurriculumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,14 +30,14 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('usuario', UsuarioController::class);
-    Route::resource('servico1', Servico1Controller::class);
-    Route::resource('reuniao', ReuniaoController::class);
-    Route::resource('vaga', VagaController::class);
+    Route::resource('funcionario', FuncionarioController::class);
+    Route::resource('produto', ProdutoController::class);
+    Route::resource('curriculum', CurriculumController::class);
 
     Route::post('usuario/search', [UsuarioController::class, 'search'])->name('usuario.search');
-    Route::post('servico1/search', [Servico1Controller::class, 'search'])->name('servico1.search');
-    Route::post('reuniao/search', [ReuniaoController::class, 'search'])->name('reuniao.search');
-    Route::post('vaga/search', [VagaController::class, 'search'])->name('vaga.search');
+    Route::post('funcionario/search', [FuncionarioController::class, 'search'])->name('funcionario.search');
+    Route::post('produto/search', [ProdutoController::class, 'search'])->name('produto.search');
+    Route::post('curriculum/search', [CurriculumController::class, 'search'])->name('curriculum.search');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

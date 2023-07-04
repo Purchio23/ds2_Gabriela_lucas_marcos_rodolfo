@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Servico1;
+use App\Models\Funcionario;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
 
-class Servico1Controller extends Controller
+class FuncionarioController extends Controller
 {
     public function index()
     {
-        $servico1s = Servico1::all();
+        $funcionarios = Funcionario::all();
 
-        return view('Servico1List')->with(['servico1s' => $servico1s]);
+        return view('FuncionarioList')->with(['funcionarios' => $funcionarios]);
     }
 
     public function create()
     {
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('Servico1Form')->with(['categorias' => $categorias]);
+        return view('FuncionarioForm')->with(['categorias' => $categorias]);
     }
 
     public function store(Request $request)
@@ -52,29 +52,29 @@ class Servico1Controller extends Controller
             'imagem' => $diretorio . $nome_arquivo,
         ];
 
-        Servico1::create($dados);
+        Funcionario::create($dados);
 
-        return redirect('servico1')->with('success', 'Cadastrado com sucesso!');
+        return redirect('funcionario')->with('success', 'Cadastrado com sucesso!');
     }
 
     public function edit($id)
     {
-        $servico1 = Servico1::findOrFail($id);
+        $funcionario = Funcionario::findOrFail($id);
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('Servico1Form')->with([
-            'servico1' => $servico1,
+        return view('FuncionarioForm')->with([
+            'funcionario' => $funcionario,
             'categorias' => $categorias,
         ]);
     }
 
     public function show($id)
     {
-        $servico1 = Servico1::findOrFail($id);
+        $funcionario = Funcionario::findOrFail($id);
         $categorias = Categoria::orderBy('nome')->get();
 
-        return view('Servico1Form')->with([
-            'servico1' => $servico1,
+        return view('FuncionarioForm')->with([
+            'funcionario' => $funcionario,
             'categorias' => $categorias,
         ]);
     }
@@ -106,41 +106,41 @@ class Servico1Controller extends Controller
             $dados['imagem'] = $diretorio . $nome_arquivo;
         }
 
-        Servico1::updateOrCreate(
+        Funcionario::updateOrCreate(
             ['id' => $id],
             $dados
         );
 
-        return redirect('servico1')->with('success', 'Atualizado com sucesso!');
+        return redirect('funcionario')->with('success', 'Atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
-        $servico1 = Servico1::findOrFail($id);
+        $funcionario = Funcionario::findOrFail($id);
 
-        if (!empty($servico1->imagem)) {
-            if (Storage::disk('public')->exists($servico1->imagem)) {
-                Storage::disk('public')->delete($servico1->imagem);
+        if (!empty($funcionario->imagem)) {
+            if (Storage::disk('public')->exists($funcionario->imagem)) {
+                Storage::disk('public')->delete($funcionario->imagem);
             }
         }
 
-        $servico1->delete();
+        $funcionario->delete();
 
-        return redirect('servico1')->with('success', 'Removido com sucesso!');
+        return redirect('funcionario')->with('success', 'Removido com sucesso!');
     }
 
     public function search(Request $request)
     {
         if ($request->campo == 'nome') {
-            $servico1s = Servico1::where(
+            $funcionarios = Funcionario::where(
                 'nome',
                 'like',
                 '%' . $request->valor . '%'
             )->get();
         } else {
-            $servico1s = Servico1::all();
+            $funcionarios = Funcionario::all();
         }
 
-        return view('Servico1List')->with(['servico1s' => $servico1s]);
+        return view('FuncionarioList')->with(['funcionarios' => $funcionarios]);
     }
 }

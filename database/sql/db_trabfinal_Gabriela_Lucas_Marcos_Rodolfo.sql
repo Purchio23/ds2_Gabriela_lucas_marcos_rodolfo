@@ -50,6 +50,26 @@ CREATE TABLE IF NOT EXISTS `curriculo` (
 
 -- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.curriculo: ~0 rows (aproximadamente)
 
+-- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.curriculum
+CREATE TABLE IF NOT EXISTS `curriculum` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idade` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.curriculum: ~5 rows (aproximadamente)
+INSERT INTO `curriculum` (`id`, `nome`, `telefone`, `email`, `idade`, `imagem`, `created_at`, `updated_at`) VALUES
+	(1, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629144633.jpg', '2023-06-29 17:46:33', '2023-06-29 17:46:33'),
+	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629151639.png', '2023-06-29 18:16:39', '2023-06-29 18:16:39'),
+	(3, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629151833.png', '2023-06-29 18:18:33', '2023-06-29 18:18:33'),
+	(4, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', NULL, '2023-07-04 18:14:19', '2023-07-04 18:14:19');
+
 -- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -64,6 +84,27 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.failed_jobs: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.funcionario
+CREATE TABLE IF NOT EXISTS `funcionario` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `categoria_id` bigint unsigned DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `servico1_categoria_id_foreign` (`categoria_id`),
+  CONSTRAINT `servico1_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.funcionario: ~2 rows (aproximadamente)
+INSERT INTO `funcionario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`, `data`) VALUES
+	(1, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629144642.jpg', '2023-06-29 17:46:42', '2023-06-29 17:46:42', 4, NULL),
+	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629151911.jpg', '2023-06-29 18:19:11', '2023-06-29 18:19:11', 5, NULL);
 
 -- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.leitura
 CREATE TABLE IF NOT EXISTS `leitura` (
@@ -104,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.migrations: ~15 rows (aproximadamente)
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.migrations: ~0 rows (aproximadamente)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2014_10_12_100000_create_password_resets_table', 1),
@@ -150,8 +191,8 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 
 -- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.personal_access_tokens: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.reuniao
-CREATE TABLE IF NOT EXISTS `reuniao` (
+-- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.produto
+CREATE TABLE IF NOT EXISTS `produto` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -160,14 +201,19 @@ CREATE TABLE IF NOT EXISTS `reuniao` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `categoria_id` bigint unsigned DEFAULT NULL,
+  `quantidade` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `reuniao_categoria_id_foreign` (`categoria_id`),
   CONSTRAINT `reuniao_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.reuniao: ~1 rows (aproximadamente)
-INSERT INTO `reuniao` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
-	(3, 'NIKe DUNK', '40', 'nike@gmail.com', 'imagem/20230629153115.jpg', '2023-06-29 18:31:15', '2023-06-29 18:31:15', 8);
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.produto: ~1 rows (aproximadamente)
+INSERT INTO `produto` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`, `quantidade`, `data`, `hora`) VALUES
+	(3, 'NIKe DUNK', '40', 'nike@gmail.com', 'imagem/20230629153115.jpg', '2023-06-29 18:31:15', '2023-06-29 18:31:15', 8, NULL, NULL, NULL),
+	(5, 'under armour', '90', 'lucassilvapurchio11@gmail.com', NULL, '2023-07-04 17:30:38', '2023-07-04 17:30:38', 8, NULL, '2023-07-04', '12:30:00'),
+	(6, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', NULL, '2023-07-04 19:07:30', '2023-07-04 19:07:30', 6, NULL, '2023-07-07', '18:12:00');
 
 -- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.sensor
 CREATE TABLE IF NOT EXISTS `sensor` (
@@ -180,36 +226,6 @@ CREATE TABLE IF NOT EXISTS `sensor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.sensor: ~0 rows (aproximadamente)
-
--- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.servico1
-CREATE TABLE IF NOT EXISTS `servico1` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `categoria_id` bigint unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `servico1_categoria_id_foreign` (`categoria_id`),
-  CONSTRAINT `servico1_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.servico1: ~2 rows (aproximadamente)
-INSERT INTO `servico1` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
-	(1, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629144642.jpg', '2023-06-29 17:46:42', '2023-06-29 17:46:42', 4),
-	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629151911.jpg', '2023-06-29 18:19:11', '2023-06-29 18:19:11', 5);
-
--- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.servico2
-CREATE TABLE IF NOT EXISTS `servico2` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.servico2: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -224,13 +240,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.users: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.users: ~2 rows (aproximadamente)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `is_admin`) VALUES
 	(1, 'admin', 'admin@admin.com', NULL, '$2y$10$Vpao1hi9SNhluOWVcN6B1ucfk5saddvBBKVGQmYjaSTRvdWuUo4/6', NULL, '2023-06-29 17:13:28', '2023-06-29 17:13:28', 0),
 	(2, 'LUCAS', 'lucassilvapurchio11@gmail.comm', NULL, '$2y$10$sbVze/2m2lD/NgyYhXo2xeqQ6BwsoqFjhWmHIAjgLg82J.MhtVD7K', NULL, '2023-06-29 17:17:41', '2023-06-29 17:17:41', 0),
-	(3, 'marcos', 'marcos@gmail.com', NULL, '$2y$10$W1pB9PgkzFk6E1YkQc4vgum0jAWtOnlUTDUK7ZWK4tfhMmAB0Ucza', NULL, '2023-06-29 18:35:11', '2023-06-29 18:35:11', 0);
+	(3, 'marcos', 'marcos@gmail.com', NULL, '$2y$10$W1pB9PgkzFk6E1YkQc4vgum0jAWtOnlUTDUK7ZWK4tfhMmAB0Ucza', NULL, '2023-06-29 18:35:11', '2023-06-29 18:35:11', 0),
+	(4, 'LUCAS  PURCHIO', 'lucassilvapurchio11@gmail.comx', NULL, '$2y$10$UzeiyEDtFg5cFL/O.DCEY.ec9zklnEHW9tv1W8tm449P1XuBkTace', NULL, '2023-07-04 17:09:41', '2023-07-04 18:24:22', 0);
 
 -- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -245,30 +262,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`),
   KEY `usuario_categoria_id_foreign` (`categoria_id`),
   CONSTRAINT `usuario_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.usuario: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.usuario: ~2 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `nome`, `telefone`, `email`, `imagem`, `created_at`, `updated_at`, `categoria_id`) VALUES
-	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629152811.png', '2023-06-29 18:28:11', '2023-06-29 18:28:11', NULL);
-
--- Copiando estrutura para tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.vaga
-CREATE TABLE IF NOT EXISTS `vaga` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `idade` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `imagem` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Copiando dados para a tabela db_trabfinal_gabriela_lucas_marcos_rodolfo.vaga: ~3 rows (aproximadamente)
-INSERT INTO `vaga` (`id`, `nome`, `telefone`, `email`, `idade`, `imagem`, `created_at`, `updated_at`) VALUES
-	(1, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629144633.jpg', '2023-06-29 17:46:33', '2023-06-29 17:46:33'),
-	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629151639.png', '2023-06-29 18:16:39', '2023-06-29 18:16:39'),
-	(3, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', '79', 'imagem/20230629151833.png', '2023-06-29 18:18:33', '2023-06-29 18:18:33');
+	(2, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', 'imagem/20230629152811.png', '2023-06-29 18:28:11', '2023-06-29 18:28:11', NULL),
+	(4, 'LUCAS DA SILVA LUCAS PURCHIO', '49984172104', 'lucassilvapurchio11@gmail.com', NULL, '2023-07-04 18:16:13', '2023-07-04 18:16:13', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

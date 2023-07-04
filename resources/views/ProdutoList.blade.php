@@ -1,18 +1,17 @@
 @extends('base.app')
 
 @section('conteudo')
-@section('tituloPagina', 'Listagem de Serviços de Coprodução')
-<h1>Listagem De Serviços</h1>
-<form action="{{ route('servico1.search') }}" method="post">
-
+@section('tituloPagina', 'Listagem de Produto')
+<h1>Listagem de Produtos Cadastrados</h1>
+<form action="{{ route('produto.search') }}" method="post">
     @csrf
     <div class="row">
         <div class="col-2">
-          
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
-                <option value="telefone">Telefone</option>
-                <option value="telefone">Email</option>
+                <option value="telefone">Tamanho</option>
+                <option value="data">Data</option>
+                <option value="hora">Hora</option>
             </select>
         </div>
         <div class="col-4">
@@ -22,7 +21,7 @@
             <button class="btn btn-primary" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
-            <a class="btn btn-success" href='{{ action('App\Http\Controllers\Servico1Controller@create') }}'><i
+            <a class="btn btn-success" href="{{ action('App\Http\Controllers\ProdutoController@create') }}"><i
                     class="fa-solid fa-plus"></i> Cadastrar</a>
         </div>
     </div>
@@ -32,16 +31,17 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
+            <th scope="col">Tamanho</th>
             <th scope="col">Email</th>
             <th scope="col">Categoria</th>
             <th scope="col">Data</th>
+            <th scope="col">Hora</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($servico1s as $item)
+        @foreach ($produtos as $item)
             @php
                 $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
             @endphp
@@ -50,14 +50,15 @@
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->categoria->nome }}</td>
+                <td>{{ $item->categoria->nome ?? ''}}</td>
                 <td>{{ $item->data }}</td>
+                <td>{{ $item->hora }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
-                <td><a href="{{ action('App\Http\Controllers\Servico1Controller@edit', $item->id) }}"><i
+                <td><a href="{{ action('App\Http\Controllers\ProdutoController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>
                     <form method="POST"
-                        action="{{ action('App\Http\Controllers\Servico1Controller@destroy', $item->id) }}">
+                        action="{{ action('App\Http\Controllers\ProdutoController@destroy', $item->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         @csrf
                         <button type="submit" onclick='return confirm("Deseja Excluir?")' style='all: unset;'><i
@@ -69,5 +70,4 @@
         @endforeach
     </tbody>
 </table>
-</div>
 @endsection

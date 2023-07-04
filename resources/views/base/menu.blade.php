@@ -13,9 +13,9 @@
                             Cadastrar
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/vaga/create') }}">Currículo</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/servico1/create') }}">Funcionarios</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/reuniao/create') }}">Produtos</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/curriculum/create') }}">Currículo</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/funcionario/create') }}">Funcionarios</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/produto/create') }}">Produtos</a></li>
                             <li><a class="dropdown-item" href="{{ url('/usuario/create') }}">Usuario</a></li>
                         </ul>
                     </li>

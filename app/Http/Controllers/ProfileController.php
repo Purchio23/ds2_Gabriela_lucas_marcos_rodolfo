@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -39,6 +40,29 @@ class ProfileController extends Controller
     }
 
     /**
+     * Update the user's profile photo.
+     */
+    public function atualizarFoto(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'foto' => ['image', 'max:2048'], // Validação para garantir que seja uma imagem válida (formato e tamanho)
+        ]);
+
+        $user = $request->user();
+
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $path = $foto->store('fotos', 'public'); // Armazena a foto na pasta "fotos" dentro do disco "public"
+
+            // Atualiza o caminho da foto do usuário no banco de dados
+            $user->foto = $path;
+            $user->save();
+        }
+
+        return redirect()->route('profile.edit')->with('status', 'photo-updated');
+    }
+
+    /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse
@@ -56,6 +80,6 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-    
+        return redirect('/');
     }
 }

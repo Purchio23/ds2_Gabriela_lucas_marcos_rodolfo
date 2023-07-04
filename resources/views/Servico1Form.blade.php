@@ -46,6 +46,11 @@
                 </select>
             </div>
             <div class="col-3">
+                <label class="form-label">Data</label><br>
+                <input type="date" class="form-control" name="data"
+                    value="@if (!empty(old('data'))) {{ old('data') }} @elseif(!empty($servico1->data)) {{ $servico1->data }} @else {{ '' }} @endif" /><br>
+            </div>
+            <div class="col-3">
                 <br>
                 <label class="form-label">Imagem- Foto 3x4 do funcionário</label><br>
                 <input type="file" name="imagem" class="form-control @error('imagem') is-invalid @enderror" />
@@ -55,7 +60,7 @@
                     </span>
                 @enderror
             </div>
-           <br>
+            <br>
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar
             </button>
@@ -63,6 +68,5 @@
                 Voltar</a> <br><br>
         </form>
     </div>
-</div>
 </div>
 @endsection

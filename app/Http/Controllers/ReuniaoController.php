@@ -25,32 +25,20 @@ class ReuniaoController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|max:120',
-            'telefone' => 'required|max:20',
-            'email' => 'required|max:100',
-            'categoria_id' => 'required',
-            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
-        ]);
+        $request->validate(Reuniao::rules(), Reuniao::messages());
+
+        $dados = $request->except('imagem');
+        $dados['data'] = $request->input('data');
+        $dados['hora'] = $request->input('hora');
 
         $imagem = $request->file('imagem');
-        $nome_arquivo = '';
+        $diretorio = 'imagem/';
 
         if ($imagem) {
             $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
-
-            $diretorio = 'imagem/';
             $imagem->storeAs($diretorio, $nome_arquivo, 'public');
             $dados['imagem'] = $diretorio . $nome_arquivo;
         }
-
-        $dados = [
-            'nome' => $request->nome,
-            'telefone' => $request->telefone,
-            'email' => $request->email,
-            'categoria_id' => $request->categoria_id,
-            'imagem' => $diretorio . $nome_arquivo,
-        ];
 
         Reuniao::create($dados);
 
@@ -68,48 +56,30 @@ class ReuniaoController extends Controller
         ]);
     }
 
-    public function show($id)
-    {
-        $reuniao = Reuniao::findOrFail($id);
-        $categorias = Categoria::orderBy('nome')->get();
-
-        return view('ReuniaoForm')->with([
-            'reuniao' => $reuniao,
-            'categorias' => $categorias,
-        ]);
-    }
-
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nome' => 'required|max:120',
-            'telefone' => 'required|max:20',
-            'email' => 'required|max:100',
-            'categoria_id' => 'required',
-            'imagem' => 'image|mimes:jpeg,jpg,png|max:2048',
-        ]);
+        $request->validate(Reuniao::rules(), Reuniao::messages());
 
-        $dados =  [
-            'nome' => $request->nome,
-            'telefone' => $request->telefone,
-            'email' => $request->email,
-            'categoria_id' => $request->categoria_id,
-        ];
+        $dados = $request->except(['imagem', '_method', '_token']);
+        $dados['data'] = $request->input('data');
+        $dados['hora'] = $request->input('hora');
+
+        $reuniao = Reuniao::findOrFail($id);
 
         $imagem = $request->file('imagem');
+        $diretorio = 'imagem/';
 
         if ($imagem) {
             $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
-
-            $diretorio = 'imagem/';
             $imagem->storeAs($diretorio, $nome_arquivo, 'public');
             $dados['imagem'] = $diretorio . $nome_arquivo;
         }
 
-        Reuniao::updateOrCreate(
-            ['id' => $id],
-            $dados
-        );
+        if (!empty($reuniao->imagem)) {
+            Storage::disk('public')->delete($reuniao->imagem);
+        }
+
+        $reuniao->update($dados);
 
         return redirect('reuniao')->with('success', 'Atualizado com sucesso!');
     }
@@ -119,9 +89,7 @@ class ReuniaoController extends Controller
         $reuniao = Reuniao::findOrFail($id);
 
         if (!empty($reuniao->imagem)) {
-            if (Storage::disk('public')->exists($reuniao->imagem)) {
-                Storage::disk('public')->delete($reuniao->imagem);
-            }
+            Storage::disk('public')->delete($reuniao->imagem);
         }
 
         $reuniao->delete();
@@ -131,12 +99,13 @@ class ReuniaoController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->campo == 'nome') {
-            $reuniaos = Reuniao::where(
-                'nome',
-                'like',
-                '%' . $request->valor . '%'
-            )->get();
+        $campo = $request->input('campo');
+        $valor = $request->input('valor');
+
+        if ($campo === 'nome') {
+            $reuniaos = Reuniao::where('nome', 'like', "%$valor%")->get();
+        } elseif ($campo === 'telefone') {
+            $reuniaos = Reuniao::where('telefone', 'like', "%$valor%")->get();
         } else {
             $reuniaos = Reuniao::all();
         }

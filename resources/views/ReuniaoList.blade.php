@@ -10,6 +10,8 @@
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
                 <option value="telefone">Tamanho</option>
+                <option value="data">Data</option>
+                <option value="hora">Hora</option>
             </select>
         </div>
         <div class="col-4">
@@ -32,6 +34,8 @@
             <th scope="col">Tamanho</th>
             <th scope="col">Email</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Data</th>
+            <th scope="col">Hora</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -47,6 +51,8 @@
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->categoria->nome ?? ''}}</td>
+                <td>{{ $item->data }}</td>
+                <td>{{ $item->hora }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
                 <td><a href="{{ action('App\Http\Controllers\ReuniaoController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
@@ -64,5 +70,4 @@
         @endforeach
     </tbody>
 </table>
-</div>
 @endsection

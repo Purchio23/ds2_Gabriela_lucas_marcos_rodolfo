@@ -132,15 +132,18 @@ class VagaController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->campo == 'nome') {
-            $vagas = Vaga::where(
-                'nome',
-                'like',
-                '%' . $request->valor . '%'
-            )->get();
-        } else {
-            $vagas = Vaga::all();
-        }
+        $campo = $request->campo;
+        $valor = $request->valor;
+
+        $vagas = Vaga::when($campo, function ($query) use ($campo, $valor) {
+            if ($campo === 'nome') {
+                $query->where('nome', 'like', '%' . $valor . '%');
+            } elseif ($campo === 'telefone') {
+                $query->where('telefone', 'like', '%' . $valor . '%');
+            } elseif ($campo === 'email') {
+                $query->where('email', 'like', '%' . $valor . '%');
+            }
+        })->get();
 
         return view('VagaList')->with(['vagas' => $vagas]);
     }

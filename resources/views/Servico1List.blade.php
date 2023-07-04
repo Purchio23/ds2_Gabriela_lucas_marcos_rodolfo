@@ -35,6 +35,7 @@
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Data</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -49,7 +50,8 @@
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->categoria->nome  }}</td>
+                <td>{{ $item->categoria->nome }}</td>
+                <td>{{ $item->data }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
                 <td><a href="{{ action('App\Http\Controllers\Servico1Controller@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>

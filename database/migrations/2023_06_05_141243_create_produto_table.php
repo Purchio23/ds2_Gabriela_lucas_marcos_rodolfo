@@ -13,17 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reuniao', function (Blueprint $table) {
+        Schema::create('produto', function (Blueprint $table) {
             $table->id();
             $table->string('nome',120);
             $table->string('telefone',20);
             $table->string('email',100);
             $table->string('imagem',150)->nullable();
             $table->timestamps();
+            $table->string('quantidade',50);
+            $table->date('data');
+            $table->time('hora');
         });
         Schema::disableForeignKeyConstraints();
 
-        Schema::table('reuniao', function (Blueprint $table) {
+        Schema::table('produto', function (Blueprint $table) {
             $table->foreignId('categoria_id')->nullable()->constrained('categoria')->default(null);
         });
 
@@ -37,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reuniao');
+        Schema::dropIfExists('produto');
     }
 };

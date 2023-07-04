@@ -30,11 +30,19 @@ class FuncionarioController extends Controller
             'telefone' => 'required|max:20',
             'email' => 'required|max:100',
             'categoria_id' => 'required',
-            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'data' => 'required|date',
+            'imagem' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
+        $dados = [
+            'nome' => $request->nome,
+            'telefone' => $request->telefone,
+            'email' => $request->email,
+            'categoria_id' => $request->categoria_id,
+            'data' => $request->data,
+        ];
+
         $imagem = $request->file('imagem');
-        $nome_arquivo = '';
 
         if ($imagem) {
             $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
@@ -43,14 +51,6 @@ class FuncionarioController extends Controller
             $imagem->storeAs($diretorio, $nome_arquivo, 'public');
             $dados['imagem'] = $diretorio . $nome_arquivo;
         }
-
-        $dados = [
-            'nome' => $request->nome,
-            'telefone' => $request->telefone,
-            'email' => $request->email,
-            'categoria_id' => $request->categoria_id,
-            'imagem' => $diretorio . $nome_arquivo,
-        ];
 
         Funcionario::create($dados);
 
@@ -86,6 +86,7 @@ class FuncionarioController extends Controller
             'telefone' => 'required|max:20',
             'email' => 'required|max:100',
             'categoria_id' => 'required',
+            'data' => 'required|date',
             'imagem' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
@@ -94,6 +95,7 @@ class FuncionarioController extends Controller
             'telefone' => $request->telefone,
             'email' => $request->email,
             'categoria_id' => $request->categoria_id,
+            'data' => $request->data,
         ];
 
         $imagem = $request->file('imagem');

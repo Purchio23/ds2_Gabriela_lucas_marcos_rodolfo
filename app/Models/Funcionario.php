@@ -11,7 +11,7 @@ class Funcionario extends Model
     protected $table = "funcionario";
 
     protected $fillable = [
-        'nome', 'telefone', 'email','categoria_id', 'imagem'
+        'nome', 'telefone', 'email','categoria_id', 'imagem','data'
     ];
 
     public function categoria(){
@@ -24,7 +24,8 @@ class Funcionario extends Model
             'telefone' => 'required | max: 20',
             'email' => ' required | max: 100',
             'categoria_id' => ' nullable',
-            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'imagem' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'data' => 'required|date',
         ];
     }
 
@@ -37,6 +38,7 @@ class Funcionario extends Model
             'email.max' => 'Só é permitido 100 caracteres',
             'categoria_id.required' => 'O salário é obrigatório',
             'imagem.required' => 'A imagem é obrigatória',
+            'data.required' => 'A data é obrigatória',
         ];
     }
 

@@ -8,21 +8,23 @@
     @csrf
     <div class="row">
         <div class="col-2">
-          
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
                 <option value="telefone">Telefone</option>
                 <option value="telefone">Email</option>
             </select>
         </div>
-        <div class="col-4">
+        <div class="col-2">
             <input type="text" class="form-control" placeholder="Pesquisar" name="valor" />
+        </div>
+        <div class="col-2">
+            <input type="date" class="form-control" placeholder="Data" name="data" />
         </div>
         <div class="col-6">
             <button class="btn btn-primary" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
-            <a class="btn btn-success" href='{{ action('App\Http\Controllers\FuncionarioController@create') }}'><i
+            <a class="btn btn-success" href="{{ action('App\Http\Controllers\FuncionarioController@create') }}"><i
                     class="fa-solid fa-plus"></i> Cadastrar</a>
         </div>
     </div>

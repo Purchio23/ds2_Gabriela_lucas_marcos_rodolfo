@@ -1,7 +1,7 @@
 @extends('base.app')
 
 @section('conteudo')
-@section('tituloPagina', 'Listagem de Usuários')
+@section('tituloPagina', 'Listagem de Curriculos')
 <h1>Listagem de Currículos recebidos</h1>
 <form action="{{ route('curriculum.search') }}" method="post">
     @csrf
